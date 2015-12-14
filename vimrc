@@ -1,7 +1,5 @@
 exec pathogen#infect()
-filetype off
 syntax on
-filetype on
 
 colorscheme pablo
 colors pablo
@@ -30,3 +28,12 @@ map <Leader>wq :wq<cr>
 map <Leader>a gT
 map <Leader>f gt
 " map <Leader>e :!e @%
+
+set backspace=2
+set noet
+set ts=4
+set shiftwidth=4
+set softtabstop=4
+set number
+set list
+set listchars=tab:>·
