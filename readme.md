@@ -1,0 +1,2 @@
+# LONG STORY SHORT, FUTURE ME
+Just clone this shit straight into your home dir. Since this is cleverly named vimfiles it'll be picked up straight away as your vimdir, and it contains your vimrc. Also your conemu settings, not that they have anything to do with vim (in fact, this was just a general settings repo before), but it was more convenient that way (also this had to be named vimfiles for hacks).
