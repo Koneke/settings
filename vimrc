@@ -27,7 +27,6 @@ map <Leader>q :q<cr>
 map <Leader>wq :wq<cr>
 map <Leader>a gT
 map <Leader>f gt
-" map <Leader>e :!e @%
 
 set backspace=2
 set noet
