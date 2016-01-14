@@ -21,12 +21,20 @@ sunmap b
 sunmap e
 sunmap ge
 
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
 map <Leader>te :tabe 
 map <Leader>w :w<cr>
 map <Leader>q :q<cr>
 map <Leader>wq :wq<cr>
 map <Leader>a gT
 map <Leader>f gt
+map <Leader>cs I/*<Esc>
+map <Leader>ce A*/<Esc>
+map <Leader>cc I//<Esc>
 
 set backspace=2
 set noet
