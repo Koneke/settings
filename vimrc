@@ -29,12 +29,20 @@ vnoremap k gk
 map <Leader>te :tabe 
 map <Leader>w :w<cr>
 map <Leader>q :q<cr>
+" REALLY quit
+map <Leader>rq :q!<cr>
 map <Leader>wq :wq<cr>
 map <Leader>a gT
 map <Leader>f gt
 map <Leader>cs I/*<Esc>
 map <Leader>ce A*/<Esc>
 map <Leader>cc I//<Esc>
+map <Leader>cr V:s`\v//(.*)`\1`<cr>
+map <Leader>rt "pyiw:s/<C-r>p/
+map <Leader>n :NERDTreeToggle<cr>
+map <Leader>cn :NERDTreeClose<cr>
+" Close opened buffer (including window if doing splits)
+map <Leader>bc :bdelete<cr>
 
 set backspace=2
 set noet
@@ -44,3 +52,5 @@ set softtabstop=4
 set number
 set list
 set listchars=tab:>·
+set nowrap
+set smartindent
