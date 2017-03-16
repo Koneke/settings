@@ -1,21 +1,30 @@
-[submodule "bundle/tlib_vim"]
-	path = bundle/tlib_vim
-	url = https://github.com/tomtom/tlib_vim.git
-[submodule "bundle/typescript-vim"]
-	path = bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "bundle/camelcasemotion"]
-	path = bundle/camelcasemotion
-	url = https://github.com/bkad/camelcasemotion.git
-[submodule "bundle/vim-addon-mw-utils"]
-	path = bundle/vim-addon-mw-utils
-	url = https://github.com/marcweber/vim-addon-mw-utils.git
-[submodule "bundle/vim-snipmate"]
-	path = bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "bundle/nerdtree"]
+[submodule "gitbundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "gitbundle/taglist.vim"]
+	path = bundle/taglist.vim
+	url = https://github.com/vim-scripts/taglist.vim
+[submodule "gitbundle/tlib_vim"]
+	path = bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim
+[submodule "gitbundle/vim-addon-mw-utils"]
+	path = bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "gitbundle/vim-alt-mappings"]
+	path = bundle/vim-alt-mappings
+	url = https://github.com/vim-utils/vim-alt-mappings.git
+[submodule "gitbundle/vim-misc"]
+	path = bundle/vim-misc
+	url = https://github.com/xolox/vim-misc.git
+[submodule "gitbundle/vim-nerdtree-tabs"]
+	path = bundle/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "gitbundle/vim-signature"]
+	path = bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature
+[submodule "gitbundle/vim-surround"]
+	path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "gitbundle/vim-wordmotion"]
+	path = bundle/vim-wordmotion
+	url = https://github.com/chaoren/vim-wordmotion
