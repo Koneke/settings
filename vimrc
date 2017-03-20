@@ -121,6 +121,7 @@ nnoremap <Leader>ta ^yg_:! taskadd <C-R>0
 vnoremap <Leader>ta y:! taskadd <C-R>0
 " nnoremap <Leader>tt :TlistToggle<CR>
 " nnoremap <Leader>tu :TlistUpdate<CR>
+nnoremap <Leader>vn :vnew<cr>
 nnoremap <Leader>vs :vsplit<cr>
 nnoremap <Leader>w :wa<cr>
 nnoremap <Leader>wq :wq<cr>
