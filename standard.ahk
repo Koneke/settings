@@ -9,8 +9,28 @@ SetMode(m)
 	ToolTip, %Mode%, 9999, 1080, 2
 }
 
+NextMode(m)
+{
+	; I'd prefer doing this with an array or something, but...
+	If IsLabel("Case-" . m)
+	Loop 1
+	{
+		Goto Case-%m%
+	Case-Normal:
+		SetMode("Insert")
+		break
+	Case-Insert:
+		SetMode("Passthrough")
+		break
+	Case-Passthrough:
+		SetMode("Normal")
+		break
+	}
+}
+
 SetMode("Normal")
 
+^!p::SetMode("Passthrough")
 ^!n::SetMode("Normal")
 ^!i::SetMode("Insert")
 
@@ -22,8 +42,6 @@ ToolTip, %FileContents%, 9920, 540, 1
 return
 ^!x::ToolTip,,,,1
 
-^!s::MsgBox, %Mode%
-
 ; === === === === === ;
 
 #If Mode = "Normal"
@@ -31,6 +49,10 @@ return
 	+]::Send, ]
 	[::{
 	]::}
+
+	!x::Send, {Escape}
+	^g::Send, {Escape}
+	^k::Send, +{End}{Delete}
 
 	!h::Send, !{Left}
 	!l::Send, !{Right}
@@ -51,7 +73,6 @@ return
 	^a::Send, {Home}
 	!e::Send, ^{Right}
 	!a::Send, ^{Left}
-	!x::Send, {Escape}
 
 	!d::Send, ^{Delete}
 	!+d::Send, ^{Backspace}
