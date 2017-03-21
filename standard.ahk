@@ -54,6 +54,8 @@ return
 	^g::Send, {Escape}
 	^k::Send, +{End}{Delete}
 
+	^/::Send, ^z
+
 	!h::Send, !{Left}
 	!l::Send, !{Right}
 
@@ -71,8 +73,12 @@ return
 	^n::Send, {Down}
 	^e::Send, {End}
 	^a::Send, {Home}
-	!e::Send, ^{Right}
-	!a::Send, ^{Left}
+
+	; need to define these with left alt,
+	; or the hotkeys for swedish letters get in the way.
+	; (somehow)
+	<!e::Send, ^{Right}
+	<!a::Send, {Ctrl down}{Left}{Ctrl up}
 
 	!d::Send, ^{Delete}
 	!+d::Send, ^{Backspace}
