@@ -76,6 +76,10 @@ nnoremap <F4> :!wc -m %<CR>
 
 nnoremap <M-i> I//<Esc>
 
+" Navigate to prev/next line with same level of indentation
+nnoremap <M-,> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
+nnoremap <M-.> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+
 " Close opened buffer (including window if doing splits)
 nnoremap <Leader>bc :bdelete<cr>
 nnoremap <Leader>cs I/*<Esc>

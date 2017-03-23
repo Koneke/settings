@@ -1,12 +1,15 @@
 ﻿#SingleInstance
 
 Mode := "Normal"
+TerminalMode := "Normal"
 
 SetMode(m)
 {
 	global Mode
+
 	Mode := m
 	ToolTip, %Mode%, 9999, 1080, 2
+	TerminalMode = "Normal"
 }
 
 NextMode(m)
@@ -33,31 +36,39 @@ SetMode("Normal")
 ^!p::SetMode("Passthrough")
 ^!n::SetMode("Normal")
 ^!i::SetMode("Insert")
+^!t::
+	SetMode("Terminal")
+	TerminalMode := "Normal"
+	return
 
 ; ahahah how banger aint this??
 ^!q::
-FileEncoding, UTF-8
-FileRead, FileContents, C:/Users/Lukas.Hagman/.misc/tasks
-ToolTip, %FileContents%, 9920, 540, 1
-return
+	FileEncoding, UTF-8
+	FileRead, FileContents, C:/Users/Lukas.Hagman/.misc/tasks
+	ToolTip, %FileContents%, 9920, 540, 1
+	return
 ^!x::ToolTip,,,,1
 
 ; === === === === === ;
 
+; Globals, ish
 #If Mode = "Normal"
+ || Mode = "Terminal"
 	+[::Send, [
 	+]::Send, ]
 	[::{
 	]::}
 
+	!h::Send, !{Left}
+	!l::Send, !{Right}
+#If
+
+#If Mode = "Normal"
 	!x::Send, {Escape}
 	^g::Send, {Escape}
 	^k::Send, +{End}{Delete}
 
 	^/::Send, ^z
-
-	!h::Send, !{Left}
-	!l::Send, !{Right}
 
 	^+l::Send, {F6}
 
@@ -95,6 +106,36 @@ return
 	>!o::Send, Ö
 #If
 
+#If Mode = "Terminal"
+	^m::
+	Enter::
+		Send, {Enter}
+		TerminalMode := "Normal"
+		return
+
+	^g::
+	Escape::
+		Send, ^a^k
+		TerminalMode := "Normal"
+		return
+
+	#If Mode = "Terminal" && TerminalMode = "Normal"
+		u::Send, cd ..{Enter}
+
+		f::
+			Send, find . -iname ''{Left}
+			TerminalMode = "Insert"
+			return
+		l::
+			Send, ls{Space}
+			TerminalMode = "Insert"
+			return
+		c::
+			Send, cd{Space}
+			TerminalMode = "Insert"
+			return
+#If
+
 ; Convenience shit
 ^!r::Reload
-^!t::Suspend
+^!s::Suspend
