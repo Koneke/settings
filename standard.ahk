@@ -134,6 +134,22 @@ SetMode("Normal")
 			Send, cd{Space}
 			TerminalMode = "Insert"
 			return
+		v::
+			Send, vim{Space}
+			TerminalMode = "Insert"
+			return
+		r::
+			Send, rm{Space}
+			TerminalMode = "Insert"
+			return
+		m::
+			Send, mv{Space}
+			TerminalMode = "Insert"
+			return
+		p::
+			Send, cp{Space}
+			TerminalMode = "Insert"
+			return
 #If
 
 ; Convenience shit
